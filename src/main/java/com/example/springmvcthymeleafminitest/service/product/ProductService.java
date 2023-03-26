@@ -9,7 +9,7 @@ import java.util.List;
 import static java.util.Arrays.asList;
 
 public class ProductService implements IGeneric<Product> {
-    private static List<Product> products;
+    private static final List<Product> products;
     private static int nextID = 0;
 
 
@@ -51,17 +51,12 @@ public class ProductService implements IGeneric<Product> {
     }
 
     @Override
-    public void edit(int id, Product generic) {
-
-    }
-
-    @Override
     public boolean exists(int id) {
         return products.stream()
                 .anyMatch(product -> product.getId() == id);
     }
 
-    private Product persist(Product product){
+    private Product persist(Product product) {
         Product clone = product.clone();
         clone.setId(nextID++);
         products.add(clone);

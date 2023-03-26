@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: header">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    <h1>Product Create</h1>
+</div>
+<p>
+    <a th:href="@{/products}">
+        Back to customer list
+    </a>
+</p>
+<div class="formbold-main-wrapper">
+    <div class="formbold-form-wrapper">
+        <form th:action="@{/products/save}" method="POST">
+            <div class="formbold-input-group">
+                <label for="name" class="formbold-form-label"> Name </label>
+                <input type="text" name="name" id="name" placeholder="Enter your name" class="formbold-form-input"
+                />
+            </div>
+
+            <button class="formbold-btn">Submit</button>
+        </form>
+    </div>
+</div>
+<script th:replace="/layout :: script"></script>
+</body>
+</html>

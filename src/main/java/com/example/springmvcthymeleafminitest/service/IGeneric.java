@@ -13,7 +13,5 @@ public interface IGeneric<T> {
 
     void remove(int id);
 
-    void edit(int id, T generic);
-
     boolean exists(int id);
 }
