@@ -38,6 +38,12 @@ public class ProductController {
         return "/edit";
     }
 
+    @PostMapping
+    public String updateCustomer(Product customer) {
+        productService.save(customer);
+        return "redirect:/products";
+    }
+
     @PostMapping("/update")
     public String update(Product product) {
         productService.save(product);

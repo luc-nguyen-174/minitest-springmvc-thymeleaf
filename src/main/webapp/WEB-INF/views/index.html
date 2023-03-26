@@ -7,6 +7,11 @@
 <body>
 <div align="center">
     <h1>Products List</h1>
+    <p>
+        <a th:href="@{/products/create}">
+            Add new customer
+        </a>
+    </p>
 </div>
 <div>
     <table class="container">
@@ -31,6 +36,11 @@
             <td th:text="${product.getMaterial()}"></td>
             <td th:text="${product.getDesc()}"></td>
             <td th:text="${product.getPrice()}"></td>
+            <td>
+                <a th:href="@{/products/{id}/edit(id=${product.getId()})}">Edit</a>
+                <a th:href="@{/products/{id}/delete(id=${product.getId()})}">Delete</a>
+                <a th:href="@{/products/{id}/view(id=${product.getId()})}">View</a>
+            </td>
         </tr>
         </tbody>
     </table>

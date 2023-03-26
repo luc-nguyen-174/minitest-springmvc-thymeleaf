@@ -65,6 +65,8 @@ public class ProductService implements IGeneric<Product> {
 
     private Product merge(Product product) {
         Product origin = findOne(product.getId());
+        int id = product.getId() + 1;
+        origin.setId(id);
         origin.setProd_id(product.getProd_id());
         origin.setProd_height(product.getProd_height());
         origin.setProd_width(product.getProd_width());
